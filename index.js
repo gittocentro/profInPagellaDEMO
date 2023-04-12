@@ -165,7 +165,7 @@ const requireLogin = (req,res,next) => {
 
 const isNotLoggedIn = (req,res,next) => {
     if (req.session.user_id) {
-        req.flash("message", "Non puoi recuperare un account se sei già loggato")
+        req.flash("message", "")
         return res.redirect("/")
     }
     next()
@@ -279,7 +279,7 @@ app.get("/teachers", validateSearch,catchAsync(async (req,res,next) => {
     const teachers = await Teacher.find({$or : [{last: {$regex: new RegExp('^'+ q +'.*', 'i')}}, {subjects: {$in: reg}} ]})
     .populate("school")
     if (teachers.length == 0) {
-        return next(new AppError("Nessun Insegnante trovato",404))
+        return next(new AppError("Nessun Insegnante trovato (Prova a cercare per cognome o per materia)",404))
     }
 
     res.render("teachers/", {teachers})
