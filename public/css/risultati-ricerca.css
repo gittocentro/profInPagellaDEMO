@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    background-color: #2DA8E3;
+    font-size: 1.6rem;
+    padding: 1.8rem;
+}
+
+/* QUESTA SEZIONE DEVI FARLA TE QUANDO PROGRAMMI LA BARRA DI RICERCA IN MODO CHE METTI I RISULTATI DELLA ROCERCA
+     POI MANDALA SUL DRIVE E IO DARO LO STILE GRAFICO FINALE */

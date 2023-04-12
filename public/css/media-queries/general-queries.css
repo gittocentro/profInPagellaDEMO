@@ -1,0 +1,7 @@
+@media screen and (min-width: 800px) { /* SERVE PER FAR SI CHE LA BARRA DI RICERCA SI ADATTI ALLA DIMENSIONE DEI TABLET E DEGLI SMARTPHONE */
+    body{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+}

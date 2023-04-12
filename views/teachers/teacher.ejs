@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profinpagella - Valuta i tuoi professori</title>
+
+    <link rel="stylesheet" href="/css/profilo-professori.css">
+    <link rel="stylesheet" href="/css/media-queries/general-queries.css">
+    <link rel="icon" type="image/png" href="/immagini_icone/favicon/faviconDEMO.png">
+</head>
+<body>
+
+    <nav class="nav-2">
+        <div class="contenitore-logo">
+            <a href="/"><img class="logo" src="/immagini_icone/logo.jpg"></a>
+        </div>
+    </nav>
+    
+    <!-- QUESTA È LA SEZIONE CHE HA LE INFO DEL PROFESSORE (nome, materia, scuola, media) -->
+    <div class="sezione-profilo">
+        <p class="flash-messages"> <%= message %> </p>
+        <span class="media-totale">
+            <% let n_reviews = teacher.reviews.length; let ans = 0; for(let review of teacher.reviews) {ans+=review.vote} %>
+            <span class="avg-vote"><% let avg = (ans)/n_reviews %><%= avg.toFixed(1) %></span>/10
+        </span>
+
+        <span class="nome-profilo"> <%= teacher.fullName  %> </span> <!-- Nome del prof -->
+        <span class="scuola-profilo"> <%= teacher.school.name %>, <%= teacher.school.city %> </span> <!-- scuola del prof -->
+        <span class="materia-profilo "> <% for (var i = 0; i < teacher.subjects.length; i++) { %> <%= teacher.subjects[i] %>  <% } %> </span> <!-- Materia del prof -->
+        <!-- PULSANTE PER VALUTARE IL PROF -->
+        <a class="bottone-valutazione" href="/teachers/<%= teacher._id %>/new_review">Valuta questo professore</a>
+    </div>
+
+    <!-- SEZIONE CON TUTTE LE RECENSIONI DEGLI UTENTI -->
+    <div class="sezione-recensioni"> <!-- TUTTA LA SEZIONE CON TUTTE LE RECENSIONI -->
+        <!-- BOX SINGOLO RECENSIONE NUMERO 1 -->
+        <% for (let review of teacher.reviews) { %>
+        <div class="contenitore-recensione">
+            <div class="dati-utente"> <!-- Serve per far si che i dati di chi ha pubblicato la recensione coprino la parte superiore del box -->
+                <span class="nome-utente"> <%= review.author.username %> </span> <!-- Nome dell'utente -->
+                <span class="data-pubblicazione">Recensito il <%=  review.date %> </span> <!-- Data di pubblicazione -->
+            </div>
+            <p class="valutazione-numerica"><span class="voto-numerico"> <%= review.vote %> </span>/10</p> <!-- Voto dato dall'utente --> <!-- "voto-numerico" è lo span che cambia-->
+            <span class="recensione-scritta"> <!-- E lo span che contiene la recensione scritta dell'utente -->
+                <%= review.msg %>
+            </span>
+            <form action="/<%= teacher._id %>/<%= review._id %>?_method=DELETE" method="POST">
+                <button type="submit">Rimuovi</button>
+            </form>
+        </div>
+        <% } %>
+    </div>
+
+</body>
+</html>

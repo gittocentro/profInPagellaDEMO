@@ -1,0 +1,90 @@
+/* PRESET GENERALI */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+}
+
+body{ /* SERVE PER CENTRARE IL FORM AL CENTRO DELLA VISUALIZZAZIONE DELLA PAGINA */
+    background-color: #F7F7F7;
+
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 1.8rem;
+}
+
+
+
+
+/* STILE DEL FORM */
+/* QUESTO DA LO STILE A FORMA DI SCHEDA DEL FORM */
+
+.registrati{
+    background-color: white;
+    border: 1.4px solid #D9D9D9;
+    border-radius: 6px;
+    width: 480px;
+    height: fit-content;
+    padding: 1.8rem;
+    gap: 1.2rem;
+    /* Allinea gli elementi dentro al form verticalmente */
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+    /* Font di base del form */
+    font-size: 1.6rem;
+}
+
+.titolo{
+    font-size: 2.4rem;
+    font-weight: 600;margin-bottom: 4rem;
+}
+
+
+.obbligatorio{ /* È L'ASTERISCO ROSSO CHE INDICA L'OBBLIGATORIETÀ DELLE COSE DA FARE */
+    color: red;
+}
+
+.input{ /* Stile dell'input degli input */
+    height: 42px;
+    padding: 0 1.2rem;
+    border-radius: 6px;
+    border: 1.4px solid #D9D9D9;
+    margin-bottom: 0.4rem;
+    font-size: 1.6rem;
+    background-color: white;
+}
+
+
+.bottone-invio{ /* Stile bottone per inviare il form */
+    background-color: #2DA8E3;
+    border-radius: 6px;
+    font-size: 1.6rem;
+    border: 0px;
+    height: 36px;
+    color: white;
+    transition: all 0.4s;
+    appearance: none; /* Questo serve per far si che su safari il bottone non cambia lo stile che abbiamo scelto */
+}
+.bottone-invio:hover, .bottone-invio:active{ /* Quando sei sopra o clicchi il bottone */
+    background-color: #2595c9;
+    transition: all 0.4s;
+}
+
+
+.bottone-registrati, .bottone-registrati:visited{
+    color: #2DA8E3;
+    margin-top: 2rem;
+}
+
+
+

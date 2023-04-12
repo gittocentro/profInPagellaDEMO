@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profinpagella</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+        .wrapper {
+            border-bottom: 1px solid #F3F3F3;
+        }
+        .contenitore-logo-email{
+            width:100%;
+            padding: 16px 0;
+            text-align: center;
+            border-bottom: 1px solid #F3F3F3;
+        }
+        .contenitore-link-email {
+            padding: 2rem;
+            text-align: center;
+        }
+        .testo-benvenuto-email{
+            font-size: 20px;
+            margin-bottom: 12px;
+
+        }
+        .link-di-verifica-email, .link-di-verifica-email:visited{
+            color: #5341F5;
+            font-size: 18px;
+            margin-top: 6px;
+            display: inline-block;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contenitore-logo-email">
+            <img class="logo" src="https://res.cloudinary.com/dfjqcqbmm/image/upload/v1681257233/progettoContrappasso/faviconDEMO_mnanhi.png" width="60">
+        </div>
+   
+
+    <div class="contenitore-link-email">
+        <p class="testo-benvenuto-email">Benvenuto su Profinpagella <b><%= token.user.username %></b> !</p>
+        <p class="testo-spiegazione-email">Clicca questo link per completare la registrazione:</p>
+        <a href="<%= link %>" class="link-di-verifica-email"><%= link %></a>
+    </div>
+    </div>
+</body>
+</html>

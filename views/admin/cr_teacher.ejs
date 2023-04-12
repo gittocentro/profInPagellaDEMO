@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/immagini-icone/favicon/faviconDEMO.png">
+    <title>Crea nuovo insengante</title>
+</head>
+<body>
+
+    <form action="/admin/teacher/new" method="POST">
+        <label for="first">Nome</label>
+        <input name="teacher[first]" type="text" id="first" placeholder="nome" > <br>
+        <label for="last">Cognome</label>
+        <input name="teacher[last]" type="text" id="last" placeholder="nome"> <br>
+        <label for="lettere">Lettere</label>
+        <input type="checkbox" name="teacher[subjects]" value="lettere" id="lettere"><br>
+        <label for="Scienze">Matematica e Fisica</label>
+        <input type="checkbox" name="teacher[subjects]" value="matematica_fisica" id="matematica_fisica"><br>
+        <label for="Scienze">Inglese</label>
+        <input type="checkbox" name="teacher[subjects]" value="inglese" id="inglese"><br>
+        <label for="Scienze">Scienze</label>
+        <input type="checkbox" name="teacher[subjects]" value="scienze" id="Scienze"> <br>
+
+        <select name="teacher[school]" id="">
+            <% for(let school of schools) { %>
+                <option value="<%= school._id %>"> <%= school.name %>, <%= school.city %> </option>
+            <% } %>
+        </select>
+
+        <button type="submit">Crea nuovo insegnante</button>
+    </form>
+    
+</body>
+</html>

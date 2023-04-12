@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profinpagella - Valuta i tuoi professori</title>
+
+    <!-- LINK AI FOGLI DI CSS -->
+    <link rel="stylesheet" href="/css/registrazione-generale.css">
+    <link rel="stylesheet" href="/css/media-queries/general-queries.css">
+    <link rel="icon" type="image/png" href="/immagini-icone/favicon/faviconDEMO.png">
+
+    <!-- RISOLUZIONE ZOOM TESTI INPUT -->
+    <style type="text/css"> 
+        input {font-size: 16px;}
+    </style>
+
+</head>
+<body>
+
+    <nav class="nav-2">
+        <div class="contenitore-logo">
+            <img class="logo" src="/immagini_icone/logo.jpg">
+        </div>
+    </nav>
+
+
+        <!-- FORM DELLA RECENSIONE -->
+        <form action="/login" class="contenitore-registrazione" method="POST">
+            <p class="titolo-registrazione">Accedi</p>
+
+            <!-- SERVE PER L'EMAIL -->
+            <label class="titolo-input" for="email">Email <span class="obbligatorio">*</span></label>
+            <input type="email" name="user[email]" id="email" class="input">
+
+            <!-- SERVE PER PASSWORD -->
+            <label class="titolo-input" for="password">Password <span class="obbligatorio">*</span></label>
+            <input type="password" name="user[password]" id="password" class="input">
+            <a class="bottone-recupero-password" href="/pw_recover">Password dimenticata? Recuperala da qui</a>
+
+            
+            <!--  BOTTONE PER INVIO-->
+            <input type="submit" Value="Invio" class="bottone-invio">
+            <a href="/signup">Non sei un nostro utente? Registrati da qui</a>
+            <%= message %>
+        </form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profinpagella - Valuta i tuoi professori</title>
+
+    <link rel="stylesheet" href="/css/general-verification-code.css">
+    <link rel="stylesheet" href="/css/media-queries/general-queries.css">
+    <link rel="icon" type="image/png" href="/immagini_icone/favicon/faviconDEMO.png">
+</head>
+<body>
+
+    <nav class="nav-2">
+        <div class="contenitore-logo">
+            <img class="logo" src="/immagini_icone/logo.jpg">
+        </div>
+    </nav>
+
+    <div class="display-contenitore-verification-code">
+        <section class="contenitore-verification-code">
+            <img src="/immagini_icone/error404.jpg" width="200">
+            <p>Inserisci l'email o il nome utente del tuo account che vuoi recuperare:</p>
+            <form action="/pw_recover" method="post" name="form-codice-di-verifica" class="form-codice-di-verifica">
+                <input type="text" name="user_info" class="input-codice-verifica">
+                <button type="submit" class="bottone-codice-verifica">Invio</button>
+            </form>
+            <%= message %>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profinpagella - Valuta i tuoi professori</title>
+
+    <link rel="icon" type="image/png" href="/immagini_icone/favicon/faviconDEMO.png">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/media-queries/general-queries.css">
+</head>
+<body>
+    <nav>
+        <div class="contenitore-logo">
+            <img class="logo" src="/immagini_icone/logo.jpg">
+        </div>
+        <div class="contenitore-registrazione">
+            <% if (!user) { %>
+            <a class="tasto-accedi" href="/login">Accedi</a>
+            <a class="tasto-registrati" href="/signup">Registrati</a>
+            <% } else { %>
+            <form action="/logout" method="POST">
+                <button class="logout" type="submit">Logout</button>
+            </form>
+            <% } %>
+        </div>
+    </nav>
+
+    <section class="sezione-cerca">
+        <form action="/teachers" class="form-barra-di-ricerca" method="POST">
+            <button class="icona-barra-di-ricerca"><img src="/immagini_icone/ricerca.png"></button> 
+            <input type="search" class="barra-di-ricerca" placeholder="Cerca professori..." name="result"> 
+            <div id="error">
+                <%= messages %>
+            </div>
+        </form>
+    </section>
+
+    <section class="sezione-informazioni">
+        <div class="contenitore-info">
+            <p class="titolo-info"> <img class="logo-info" src="immagini_icone/iniziare.png" alt="">Per iniziare</p>
+            <p>Su <a href="index.html">Profinpagella</a> puoi cercare il nome ed il cognome del tuo professore per valutarlo.</p>
+            <p>Potrai dare un <b>voto</b> da 1 a 10 e scrivere una <b>recensione</b>.</p>
+            <p>Il sito e' al momento disponibile solo per <b>IISS Majorana</b> di Martina franca</p>
+        </div>
+        <div class="contenitore-info">
+            <p class="titolo-info"> <img class="logo-info" src="immagini_icone/thumbtack.png" alt="">Linee guida</p>
+            <ul class="lista-regole">
+                <li>Non insultare o denigrare i docenti.</li>
+                <li>Non raccontare cose private.</li>
+                <li>Non nominare altri studenti.</li>
+            </ul>
+        </div>
+        <div class="contenitore-info">
+            <p class="titolo-info"> <img class="logo-info" src="immagini_icone/at.png" alt="">Contattaci</p>
+            <p>Vogliamo mantenere la nostra identita' segreta.</p>
+            <p>Per contattarci scrivi alla email: <b>profinpagella@gmail.com</b>.</p>
+        </div>
+    </section>
+
+    <footer>
+        <a class="link-footer" href="/privacy">Privacy</a>
+        <a class="link-footer" href="/terms">Termini d'uso</a>
+        <a class="link-footer" href="/cookies">Cookies</a>
+    </footer>
+</body>
+</html>
+
+<script>
+    /*
+const search = document.querySelector('.barra-di-ricerca')
+const form = document.querySelector('.form-barra-di-ricerca')
+const errorElement = document.getElementById('error')
+
+console.log(search);
+
+form.addEventListener('submit', (e) => {
+  let messages = []
+  if (search.value === '' || search.value == null) {
+    messages.push('Devi prima inserire un testo nella barra di ricerca')
+  }
+
+  if (messages.length > 0) {
+    e.preventDefault()
+    errorElement.innerText = messages.join(', ')
+  }
+})*/
+</script>

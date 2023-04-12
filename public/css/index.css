@@ -1,0 +1,195 @@
+/*GENERALI*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a:link, a:visited{
+    color: #161616;
+    font-weight: 500;
+}
+
+
+
+
+
+
+/*NAV*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.2rem 1.6rem;
+    box-shadow: 0 2px 6px 0 #0000001f;
+}
+
+.contenitore-logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 3.6rem;
+}
+
+.contenitore-registrazione{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.tasto-accedi:link, .tasto-accedi:visited{
+    text-decoration: none;
+    color: #101010;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.tasto-registrati:link, .tasto-registrati:visited{
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #161616;
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+/*BARRA DI RICERCA*/
+.form-barra-di-ricerca{
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.barra-di-ricerca{
+    width: calc(100% - 36px);
+    height: 54px;
+    border: none;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding-left: 44px;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
+}
+/* Questo serve per togliere l'estetica di base di ios dalla barra di ricerca (a noi non serve)*/
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+-webkit-appearance:none;
+}
+
+.barra-di-ricerca::placeholder{
+    font-size: 2rem;
+    color: #868686;
+    font-family: inherit;
+    font-weight: 400;
+}
+
+.icona-barra-di-ricerca{
+    background: none;
+    border: none;
+    position: absolute;
+    margin-top: 9px;
+    margin-left: 26px;
+}
+
+.icona-barra-di-ricerca img{
+    width: 3.4rem;
+}
+
+
+
+/*SEZIONE INFORMAZIONI DEL SITO*/
+.sezione-informazioni{
+    padding: 1.8rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.contenitore-info{
+    padding: 1.6rem;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    color: #202020;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    background-color: #f9f9f9;
+}
+
+.titolo-info{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #5341F5;
+
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.logo-info{
+    width: 2rem;
+}
+
+.lista-regole{
+    margin-left: 1.8rem;
+}
+
+
+
+
+
+/*FOOTER*/
+footer{
+    margin-top: 4rem;
+    padding: 4rem;
+    background-color: #f9f9f9;
+    font-size: 1.6rem;
+
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+}
+
+#error {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #5341F5;
+
+    display: flex;
+    justify-content: center;
+}
+
+.logout {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #161616;
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    background: black;
+    border: none;
+    outline: none;
+}
