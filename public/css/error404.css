@@ -26,11 +26,11 @@ body{
     padding: 0 2.8rem;
     height: fit-content;
     margin: auto 0;
-    transform: translate(0 , -20% );
 }
 
 .immagine-404{
-    width: 60%;
+    width: 50%;
+    object-fit: cover;
 }
 
 .testo-404{

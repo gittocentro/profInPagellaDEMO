@@ -196,7 +196,7 @@ const isVerifyingUser = (req,res,next) => {
     if (req.session.tk_id === tk_id) {
         next()
     } else {
-        throw new AppError("Non hai accesso a questa pagina. Torna ad hackerare da un'altra parte", 401)
+        throw new AppError("Non hai accesso a questa pagina", 401)
     }
 }
 
@@ -207,7 +207,7 @@ const isVerifyingPwUser = (req,res,next) => {
     if (req.session.pwTk_id === pwTk_id) {
         next()
     } else {
-        throw new AppError("Non hai accesso a questa pagina. Vir s t n ve' a fangul", 401)
+        throw new AppError("Non hai accesso a questa pagina. Livt d'annanz...", 401)
     }
 }
 
@@ -225,7 +225,7 @@ const sendPwCode = catchAsync(async(req,res,next) => {
     const pwToken = await PwToken.findById(req.session.pwTk_id)
     .populate("user")
     if (!pwToken) {
-        return next(new AppError("Link di verifica scaduto. Mio nonno in carrozzella è più veloce",401))
+        return next(new AppError("Link di verifica scaduto. E' più reattivo Schumacher...",401))
     }
     await Email.sendPasswordCode(pwToken)
     next()
@@ -235,7 +235,7 @@ const pwTokenExist = catchAsync(async(req,res,next) => {
     const pwToken = await PwToken.findById(req.session.pwTk_id)
     const {pwTk_id} = req.session
     if (!pwToken) {
-        return next(new AppError("Link di verifica scaduto. Mio nonno in carrozzella è più veloce",401))
+        return next(new AppError("Link di verifica scaduto. E' più reattivo Schumacher",401))
     }
     next()
 })
@@ -489,6 +489,7 @@ app.get("/cookies", (req,res) => {
 ////////////////////////////////////////////////////////
 
 //ADMIN
+/*
 app.get("/admin", catchAsync(async(req,res,next) => {
     const teachers = await Teacher.find({})
     res.render("admin/admin", {teachers});
@@ -517,7 +518,7 @@ app.delete("/admin/teacher/:id", catchAsync(async (req,res,next) => {
     const {id} = req.params;
     const teacher = await Teacher.findByIdAndDelete(id)
     res.redirect("/admin")
-}))
+}))*/
 
 
 //404 NOT FOUND
