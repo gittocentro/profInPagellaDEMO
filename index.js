@@ -350,7 +350,9 @@ app.get("/signup", isNotLoggedIn, (req,res) => {
 //POST
 app.post("/signup",isNotLoggedIn,validateRegisterUser, catchAsync(async (req,res,next) => {
     const {password,email,username} = req.body.user
-    const foundUser = await User.findAndRegister(username,email,password)
+    const foundUser = await User.findOne({$or : [
+        {username: username}, {email: email}
+    ]})
     if (foundUser) {
         req.flash("message","Nome Utente o Email già in utilizzo, sembra che stiamo diventando popolari...")
         return res.redirect("/signup")
