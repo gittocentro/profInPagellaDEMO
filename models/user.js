@@ -42,7 +42,7 @@ userSchema.statics.findAndRegister = async function(username,email,password) {
     const foundUser = await this.findOne({$or : [
         {email},
         {username}
-    ]})
+    ]}).then(data => console.log(data))
     if (foundUser) {
         //MEANS THAT WE CAN'T CONTINUE SINGING UP
         return true
