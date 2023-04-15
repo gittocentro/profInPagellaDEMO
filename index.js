@@ -225,7 +225,7 @@ const sendPwCode = catchAsync(async(req,res,next) => {
     const pwToken = await PwToken.findById(req.session.pwTk_id)
     .populate("user")
     if (!pwToken) {
-        return next(new AppError("Link di verifica scaduto. E' più reattivo Schumacher...",401))
+        return next(new AppError("Link di verifica scaduto, Riprova",401))
     }
     await Email.sendPasswordCode(pwToken)
     next()
