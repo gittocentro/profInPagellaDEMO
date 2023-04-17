@@ -175,7 +175,14 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(session(sessionOptions))
 app.use(mongoSanitize())
-app.use(helmet({contentSecurityPolicy: false}))
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "'unsafe-inline'"],
+    objectSrc: [],
+    upgradeInsecureRequests: true,
+  }
+}));
 
 
 app.get("/", catchAsync(async(req,res) => {
