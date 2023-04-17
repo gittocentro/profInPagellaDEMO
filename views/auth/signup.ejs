@@ -31,12 +31,25 @@
             <p class="titolo-registrazione">Registrati anche tu!</p>
 
             <!-- SERVE PER IL NICKNAME -->
+<<<<<<< HEAD
             <label class="titolo-input" for="username">Nome utente</label>
             <input type="text" name="user[username]" id="username" class="input" placeholder="(Non usare la tua identità)" required>
 
             <!-- SERVE PER PASSWORD -->
             <label class="titolo-input" for="password">Password</label>
             <input type="text" name="user[password]" id="password" class="input" required>
+=======
+            <label class="titolo-input" for="username">Nome Utente<span class="obbligatorio">*</span></label>
+            <input type="text" name="user[username]" id="username" class="input">
+
+            <!-- SERVE PER L'EMAIL -->
+            <label class="titolo-input" for="email">La tua Email<span class="obbligatorio">*</span></label>
+            <input type="email" name="user[email]" id="email" class="input">
+
+            <!-- SERVE PER PASSWORD -->
+            <label class="titolo-input" for="password">Password <span class="obbligatorio">*</span></label>
+            <input type="text" name="user[password]" id="password" class="input">
+>>>>>>> 0c441e5e45e33be40fb1c7a71decd998fa73ba9e
 
             <%= message %>
             <!--  BOTTONE PER INVIO-->

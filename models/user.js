@@ -27,6 +27,36 @@ userSchema.statics.findAndValidate =  async function(username, password) {//LOGI
     return isValid ? foundUser : false
 }
 
+<<<<<<< HEAD
+=======
+userSchema.statics.findAndRegister = async function(username,email,password) {
+    const foundUser = await this.findOne({$or : [
+        {username: username}, {email: email}
+    ]}).then(data => console.log(data))
+    if (foundUser) {
+        //MEANS THAT WE CAN'T CONTINUE SINGING UP
+        return true
+    } else {
+        return false
+    }
+}
+userSchema.pre("save", async function(next) {
+    if (!this.isVerified) {
+        this.password = await bcrypt.hash(this.password, 12)
+        //SAVE
+    }
+    //SAVE
+    next()
+})
+
+userSchema.pre("findOneAndUpdate", async function(next) {
+    const doc = await this.model.findOne(this.getQuery());
+    const pwToken = await PwToken.findByIdAndDelete(doc._id)
+    next()
+})
+
+
+>>>>>>> 0c441e5e45e33be40fb1c7a71decd998fa73ba9e
 const User = mongoose.model("User", userSchema)
 
 module.exports = User;

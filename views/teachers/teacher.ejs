@@ -46,6 +46,7 @@
             <span class="recensione-scritta"> <!-- E lo span che contiene la recensione scritta dell'utente -->
                 <%= review.msg %>
             </span>
+<<<<<<< HEAD
             <div class="bottone-like">
                 <form action="/teachers/<%= teacher._id %>/<%= review._id %>/like" method="POST">
                     <span class="bottone-like--count"> <%= review.likes.length %> </span>
@@ -63,6 +64,8 @@
                     </button>
                 </form>
             </div>
+=======
+>>>>>>> 0c441e5e45e33be40fb1c7a71decd998fa73ba9e
         </div>
         <% } %>
     </div>

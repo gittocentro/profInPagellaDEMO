@@ -158,6 +158,78 @@ const isNotLoggedIn = (req,res,next) => {
     next()
 }
 
+<<<<<<< HEAD
+=======
+const isVerifying = (req,res,next) => {
+    if (!req.session.tk_id) {
+        throw new AppError("Non hai accesso a questa pagina", 401)
+    }
+    if (req.session.user_id) {
+        throw new AppError("Non puoi registrarti se sei già loggato al sito", 401)
+    }
+    next()
+}
+
+const isVerifyingPw = (req,res,next) => {
+    if (!req.session.pwTk_id) {
+        throw new AppError("Non hai accesso a questa pagina", 401)
+    }
+    next()
+}
+
+
+const isVerifyingUser = (req,res,next) => {
+    const {tk_id} = req.params;
+    console.log("ID N1 : " + tk_id)
+    console.log("ID N2 :"+ req.session.tk_id)
+    if (req.session.tk_id === tk_id) {
+        next()
+    } else {
+        throw new AppError("Non hai accesso a questa pagina", 401)
+    }
+}
+
+const isVerifyingPwUser = (req,res,next) => {
+    const {pwTk_id} = req.params;
+    console.log("ID N1 : " + pwTk_id)
+    console.log("ID N2 : "+ req.session.pwTk_id)
+    if (req.session.pwTk_id === pwTk_id) {
+        next()
+    } else {
+        throw new AppError("Non hai accesso a questa pagina. Livt d'annanz...", 401)
+    }
+}
+
+const sendVerificationMail = catchAsync(async(req, res,next) => {
+    const token = await Token.findById(req.session.tk_id)
+    .populate("user")
+    if (!token) {
+        return next(new AppError("Email di verifica scaduta, Registrati di nuovo", 410))
+    }
+    await Email.sendVerificationMail(token)
+    next()
+})
+
+const sendPwCode = catchAsync(async(req,res,next) => {
+    const pwToken = await PwToken.findById(req.session.pwTk_id)
+    .populate("user")
+    if (!pwToken) {
+        return next(new AppError("Link di verifica scaduto, Riprova",401))
+    }
+    await Email.sendPasswordCode(pwToken)
+    next()
+})
+
+const pwTokenExist = catchAsync(async(req,res,next) => {
+    const pwToken = await PwToken.findById(req.session.pwTk_id)
+    const {pwTk_id} = req.session
+    if (!pwToken) {
+        return next(new AppError("Link di verifica scaduto. E' più reattivo Schumacher",401))
+    }
+    next()
+})
+
+>>>>>>> 0c441e5e45e33be40fb1c7a71decd998fa73ba9e
 app.use(flash())
 app.use(methodOverride("_method"))
 
@@ -285,8 +357,15 @@ app.get("/signup", isNotLoggedIn, (req,res) => {
 })
 //POST
 app.post("/signup",isNotLoggedIn,validateRegisterUser, catchAsync(async (req,res,next) => {
+<<<<<<< HEAD
     const {password,username} = req.body.user
     const foundUser = await User.findOne({username});
+=======
+    const {password,email,username} = req.body.user
+    const foundUser = await User.findOne({$or : [
+        {username: username}, {email: email}
+    ]})
+>>>>>>> 0c441e5e45e33be40fb1c7a71decd998fa73ba9e
     if (foundUser) {
         req.flash("message","Nome Utente o Email già in utilizzo, sembra che stiamo diventando popolari...")
         return res.redirect("/signup")
