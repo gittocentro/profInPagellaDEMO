@@ -175,7 +175,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(session(sessionOptions))
 //app.use(mongoSanitize())
-app.use(helmet({contentSecurityPolicy: false}))
+//app.use(helmet({contentSecurityPolicy: false}))
 
 
 app.get("/", catchAsync(async(req,res) => {
