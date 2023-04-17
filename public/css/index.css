@@ -1,3 +1,4 @@
+
 /*GENERALI*/
 *{
     margin: 0;
@@ -73,7 +74,7 @@ nav{
 /*BARRA DI RICERCA*/
 .sezione-cerca{
     background-color: black;
-    background-image: url("https://theme.zdassets.com/theme_assets/1076102/6aa88d06680d247ef5fb171705a72bd3eef9c760.svg");
+    background-image: url("/immagini_icone/6aa88d06680d247ef5fb171705a72bd3eef9c760.svg");
     background-size: cover;
     background-position: center;
     padding: 6.8rem 0;
@@ -237,6 +238,7 @@ footer{
 .News-h3 {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 .News-h3 img {
     margin: 5px;
