@@ -271,11 +271,11 @@ app.post("/teachers/:id/:r_id/like", requireLogin,catchAsync(async (req,res,next
     const review = await Review.findById(req.params.r_id)
     console.log(review.likes[0])
     console.log(req.session.user_id)
-
-    for (user._id in review.likes) {
-        //LIKE TOLTO
-        await Review.findByIdAndUpdate(review._id, {$pull: {likes: {$in: [user._id] } } } )
-        return res.redirect("/teachers/"+teacher._id) //PER ORA
+    for var (i = 0; i < review.likes.length; i++) {
+        if (user._id == review.likes[0]) {
+            await Review.findByIdAndUpdate(review._id, {$pull: {likes: {$in: [user._id] } } } )
+            return res.redirect("/")
+        }
     }
     review.likes.push(req.session.user_id)
     await review.save()
