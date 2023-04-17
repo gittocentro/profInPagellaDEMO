@@ -263,7 +263,7 @@ app.post("/teachers/:id/:r_id/like", requireLogin,catchAsync(async (req,res,next
         console.log(review.likes[i])
         if (review.likes[i].equals(user._id)) {
             await Review.findByIdAndUpdate(review._id, {$pull: {likes: {$in: [user._id] } } } )
-            return res.redirect("/")
+            return res.redirect("/teachers/"+teacher._id) //PER ORA
             break
         }
     }
