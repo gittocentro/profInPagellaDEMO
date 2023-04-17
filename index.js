@@ -167,7 +167,7 @@ app.use(morgan("dev"))
 
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use("", (req,res,next) => {
+app.use("/", (req,res,next) => {
     helmet()
 })
 app.engine("ejs", ejsMate);
