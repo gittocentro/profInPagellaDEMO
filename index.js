@@ -149,7 +149,7 @@ const requireLogin = (req,res,next) => {
     } 
     next()
 
-]
+}
 
 const isNotLoggedIn = (req,res,next) => {
     if (req.session.user_id) {
