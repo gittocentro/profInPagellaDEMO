@@ -229,7 +229,6 @@ const pwTokenExist = catchAsync(async(req,res,next) => {
     next()
 })
 
->>>>>>> 0c441e5e45e33be40fb1c7a71decd998fa73ba9e
 app.use(flash())
 app.use(methodOverride("_method"))
 
