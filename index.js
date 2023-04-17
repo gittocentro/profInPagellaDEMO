@@ -308,8 +308,8 @@ app.get("/login", (req,res) => {
 })
 //POST
 app.post("/login",validateLoginUser,catchAsync(async (req,res,next) => {
-    const {email, password} = req.body.user
-    const foundUser = await User.findAndValidate(email,password);
+    const {username, password} = req.body.user
+    const foundUser = await User.findAndValidate(username,password);
     if (foundUser) {
         req.session.user_id = foundUser._id
         res.redirect("/")
