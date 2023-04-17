@@ -175,16 +175,6 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(session(sessionOptions))
 app.use(mongoSanitize())
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", "profinpagella.com"],
-      objectSrc: ["'none'"],
-      upgradeInsecureRequests: [],
-    },
-  })
-);
 
 
 app.get("/", catchAsync(async(req,res) => {
@@ -270,9 +260,11 @@ app.post("/teachers/:id/:r_id/like", requireLogin,catchAsync(async (req,res,next
     const teacher = await Teacher.findById(req.params.id);
     const review = await Review.findById(req.params.r_id)
     for (var i = 0; i < review.likes.length; i++) {
-        if (user._id == review.likes[i]) {
+        console.log(review.likes[i])
+        if (review.likes[i].equals(user._id)) {
             await Review.findByIdAndUpdate(review._id, {$pull: {likes: {$in: [user._id] } } } )
             return res.redirect("/")
+            break
         }
     }
     review.likes.push(req.session.user_id)
