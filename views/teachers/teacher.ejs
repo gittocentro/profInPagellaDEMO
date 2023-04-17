@@ -22,8 +22,8 @@
     <div class="sezione-profilo">
         <p class="flash-messages"> <%= message %> </p>
         <span class="media-totale">
-            <% let n_reviews = teacher.reviews.length; let ans = 0; for(let review of teacher.reviews) {ans+=review.vote} %>
-            <span class="avg-vote"><% let avg = (ans)/n_reviews %><%= avg.toFixed(1) %></span>/10
+             <% let n_reviews = teacher.reviews.length; let ans = 0; for(let review of teacher.reviews) {ans+=review.vote} %>
+            <span class="avg-vote"><% let avg = (ans)/n_reviews %><%= avg.toFixed(1) %></span>
         </span>
 
         <span class="nome-profilo"> <%= teacher.fullName  %> </span> <!-- Nome del prof -->
@@ -39,16 +39,30 @@
         <% for (let review of teacher.reviews) { %>
         <div class="contenitore-recensione">
             <div class="dati-utente"> <!-- Serve per far si che i dati di chi ha pubblicato la recensione coprino la parte superiore del box -->
-                <span class="nome-utente"> <%= review.author.username %> </span> <!-- Nome dell'utente -->
-                <span class="data-pubblicazione">Recensito il <%=  review.date %> </span> <!-- Data di pubblicazione -->
+                <span class="nome-utente"> <b><%= review.author.username %></b> </span> <!-- Nome dell'utente -->
+                <span class="data-pubblicazione"><%=  review.date %> </span> <!-- Data di pubblicazione -->
             </div>
-            <p class="valutazione-numerica"><span class="voto-numerico"> <%= review.vote %> </span>/10</p> <!-- Voto dato dall'utente --> <!-- "voto-numerico" è lo span che cambia-->
+            <p class="valutazione-numerica"><span class="voto-numerico"> <%= review.vote %> </span></p> <!-- Voto dato dall'utente --> <!-- "voto-numerico" è lo span che cambia-->
             <span class="recensione-scritta"> <!-- E lo span che contiene la recensione scritta dell'utente -->
                 <%= review.msg %>
             </span>
-            <form action="/<%= teacher._id %>/<%= review._id %>?_method=DELETE" method="POST">
-                <button type="submit">Rimuovi</button>
-            </form>
+            <div class="bottone-like">
+                <form action="/teachers/<%= teacher._id %>/<%= review._id %>/like" method="POST">
+                    <span class="bottone-like--count"> <%= review.likes.length %> </span>
+                    <button type="submit">
+                        <% if (user) { %>
+
+                            <% if (review.likes.includes(user._id)) { %>
+                                <img src="/immagini_icone/heart-filled.png"  alt="">
+                            <% } else { %>
+                                
+                                <img src="/immagini_icone/heart.png"  alt="">
+                            <% } %>
+
+                        <% } %>
+                    </button>
+                </form>
+            </div>
         </div>
         <% } %>
     </div>

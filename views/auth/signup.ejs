@@ -28,25 +28,20 @@
 
         <!-- FORM DELLA RECENSIONE -->
         <form action="/signup/" method="POST" class="contenitore-registrazione">
-            <p class="titolo-registrazione">Registrati</p>
+            <p class="titolo-registrazione">Registrati anche tu!</p>
 
             <!-- SERVE PER IL NICKNAME -->
-            <label class="titolo-input" for="username">Nickname <span class="obbligatorio">*</span></label>
-            <input type="text" name="user[username]" id="username" class="input">
-
-            <!-- SERVE PER L'EMAIL -->
-            <label class="titolo-input" for="email">Email <span class="obbligatorio">*</span></label>
-            <input type="email" name="user[email]" id="email" class="input">
+            <label class="titolo-input" for="username">Nome utente</label>
+            <input type="text" name="user[username]" id="username" class="input" placeholder="(Non usare la tua identità)" required>
 
             <!-- SERVE PER PASSWORD -->
-            <label class="titolo-input" for="password">Password <span class="obbligatorio">*</span></label>
-            <input type="password" name="user[password]" id="password" class="input">
+            <label class="titolo-input" for="password">Password</label>
+            <input type="text" name="user[password]" id="password" class="input" required>
 
-            
+            <%= message %>
             <!--  BOTTONE PER INVIO-->
             <input type="submit" Value="Continua" class="bottone-invio">
             <a href="/login">Ti sei gia' registrato? Accedi da qui</a>
-            <%= message %>
         </form>
 </body>
 </html>

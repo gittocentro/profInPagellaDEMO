@@ -11,7 +11,7 @@ html{
 }
 
 a:link, a:visited{
-    color: #5341F5;
+    color: #000000;
     font-weight: 500;
 }
 
@@ -32,7 +32,7 @@ a:link, a:visited{
 }
 
 .logo{
-    width: 3.6rem;
+    width: 3.2rem;
 }
 
 /* STILE DEL FORM */
@@ -60,14 +60,9 @@ a:link, a:visited{
     font-weight: 500;
 }
 
-.obbligatorio{ /* È L'ASTERISCO ROSSO CHE INDICA L'OBBLIGATORIETÀ DELLE COSE DA FARE */
-    color: #5341F5;
-    font-size: 2rem;
-}
-
 .input{ /* Stile dell'input degli input */
     padding: 1.2rem 1.6rem;
-    border-radius: 10px;
+    border-radius: 4px;
     border: 1.6px solid #D9D9D9;
     margin-bottom: 0.4rem;
     font-size: 1.6rem;
@@ -75,7 +70,7 @@ a:link, a:visited{
 }
 
 .bottone-recupero-password, .bottone-recupero-password:visited{
-    color: #2DA8E3;
+    color: #000000;
     margin-bottom: 2rem;
 }
 
@@ -87,7 +82,7 @@ a:link, a:visited{
     font-weight: 600;
     font-size: 1.6rem;
     padding: 1.2rem 0;
-    border-radius: 10px;
+    border-radius: 100px;
     border: none;
     /* Serve per centrare il testo */
     appearance: none; /* Questo serve per far si che su safari il bottone non cambia lo stile che abbiamo scelto */

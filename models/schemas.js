@@ -28,7 +28,7 @@ const Joi = BaseJoi.extend(extension)
 module.exports.userRegisterSchema = Joi.object({
     user: Joi.object({
         username: Joi.string().min(4).max(20).required().escapeHtml().messages({"string.min": "Il nome utente deve avere un minimo di 4 caratteri", "string.max": "Il nome utente può avere un massimo di 20 caratteri"}),
-        email: Joi.string().email().required().escapeHtml().messages({"string.email": "L'email deve essere valida, se usi quelle del burundi non le supportiamo, spiaze."}),
+        //email: Joi.string().email().required().escapeHtml().messages({"string.email": "L'email deve essere valida, se usi quelle del burundi non le supportiamo, spiaze."}),
         password: Joi.string().min(4).max(20).required().escapeHtml().messages({"string.min":"La password deve avere almeno 4 caratteri", "string.max": "La password può avere un massimo di 20 caratteri"}),
     }).required()
     .messages({
@@ -38,7 +38,8 @@ module.exports.userRegisterSchema = Joi.object({
 
 module.exports.userLoginSchema = Joi.object({
     user: Joi.object({
-        email: Joi.string().email().required().escapeHtml().messages({"string.email": "L'email deve essere valida, se usi quelle del burundi non le supportiamo, spiaze."}),
+        username: Joi.string().min(4).max(20).required().escapeHtml().messages({"string.min": "Il nome utente deve avere un minimo di 4 caratteri", "string.max": "Il nome utente può avere un massimo di 20 caratteri"}),
+        //email: Joi.string().email().required().escapeHtml().messages({"string.email": "L'email deve essere valida, se usi quelle del burundi non le supportiamo, spiaze."}),
         password: Joi.string().required().escapeHtml(),
     }).required()
     .messages({

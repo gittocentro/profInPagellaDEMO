@@ -11,7 +11,7 @@ html{
 }
 
 a:link, a:visited{
-    color: #161616;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ a:link, a:visited{
 }
 
 .logo{
-    width: 3.6rem;
+    width: 3.2rem;
 }
 
 
@@ -50,7 +50,7 @@ a:link, a:visited{
 }
 
 .obbligatorio{ /* È L'ASTERISCO ROSSO CHE INDICA L'OBBLIGATORIETÀ DELLE COSE DA FARE */
-    color: #5341F5;
+    color: #000000;
     font-size: 2rem;
 }
 
@@ -70,7 +70,7 @@ a:link, a:visited{
 
 .linee-guida{ /* Stile de box delle linee guida */
     background-color: #f9f9f9;
-    border-radius: 10px;
+    border-radius: 4px;
     color: #161616;
     padding: 1.6rem;
 }
@@ -89,9 +89,9 @@ a:link, a:visited{
 .recensione{ /* Stile del textarea in cui scrivere la recensione */
     min-height: 100px;
     padding: 1.2rem;
-    border-radius: 6px;
+    border-radius: 4px;
     border: 1.6px solid #D9D9D9;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-family: inherit;
     resize: none;
 }
@@ -109,32 +109,34 @@ a:link, a:visited{
     font-weight: 600;
     font-size: 1.6rem;
     padding: 1.2rem 0;
-    border-radius: 10px;
+    border-radius: 100px;
     border: none;
     /* Serve per centrare il testo */
     appearance: none; /* Questo serve per far si che su safari il bottone non cambia lo stile che abbiamo scelto */
 }
 
 .valutazione__voto-real-time {
-
-
-    font-size: 5rem;
-
+    font-size: 2.8rem;
+    font-weight: 500;
+    height: 60px;
+    width: 60px;
     color: white;
-    
-    border-radius: 2.5rem;
-    background: #5341F5;
-    padding: 0 2.5rem;
-    min-width: 15%;
+    border-radius: 4px;
+    background: #000000;
+    padding: 0.8rem 1.6rem;
     align-self: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
 }
+
+
 .slider {
     -webkit-appearance: none;
     width: 100%;
     height: 25px;
-    background: #d3d3d3;
+    background: #dddddd;
     border-radius: 1.5rem;
     outline: none;
     opacity: 0.7;
@@ -152,15 +154,14 @@ a:link, a:visited{
     appearance: none;
     width: 25px;
     height: 25px;
-    background: #5341F5;
+    background: #000000;
     cursor: pointer;
     border-radius: 50%;
   }
-  
   .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    background: #5341F5;
+    background: #000000;
     cursor: pointer;
     border-radius: 50%;
   }

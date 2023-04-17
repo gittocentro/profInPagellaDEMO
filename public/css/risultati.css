@@ -36,7 +36,7 @@ a:link, a:visited{
 }
 
 .logo{
-    width: 3.6rem;
+    width: 3.2rem;
 }
 
 
@@ -44,7 +44,7 @@ a:link, a:visited{
 
 
 .risultati-ricerca{
-    padding: 1.8rem;
+    padding: 1.8rem 1.2rem;
 
     display: flex;
     flex-direction: column;
@@ -74,7 +74,7 @@ a:link, a:visited{
 }
 
 .materia-professore-ricerca{
-    color: #5341F5;
+    color: #0060df;
 }
 
 

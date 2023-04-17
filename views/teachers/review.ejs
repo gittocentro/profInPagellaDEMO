@@ -35,7 +35,7 @@
     <!-- FORM DELLA RECENSIONE -->
     <form action="/teachers/<%= teacher._id %>/review" class="contenitore-valutazione" method="POST">
         <!-- SERVE PER SCEGLIERE IL VOTO DA DARE -->
-        <label for="voto" class="titolo-voto">Scegli il voto <span class="obbligatorio">*</span></label>
+        <label for="voto" class="titolo-voto">Scegli un voto</label>
         <input class="slider" id="voto" type="range" name="review[vote]" value="1" step="0.5" min="1" max="10" oninput="showVal(this.value)" onchange="showVal(this.value)">
 
         <!--Codice provvisorio -->
@@ -46,7 +46,7 @@
         </p>
         <!-- Codice provvisorio -->
         <!-- SERVE PER SCEGLIERE LA RECENSIONE DA SCRIVERE -->
-        <label for="recensione" class="titolo-recensione">Scrivi una recensione <span class="obbligatorio">*</span></label>
+        <label for="recensione" class="titolo-recensione">Scrivi una recensione</label>
                     <!-- Queste sono le linee guida da rispettare -->
         <div class="linee-guida">
             <p class="titolo-linee-guida">Linee guida</p>
@@ -60,7 +60,6 @@
         <textarea id="recensione" name="review[msg]" class="recensione" placeholder="Scrivi ciò che pensi..."></textarea>
         <!--  BOTTONE PER PUBBLICARE LA RECENSIONE-->
         <input type="submit" Value="Invia valutazione" class="bottone-invio">
-        <b class="titolo-voto"><%= message %></b>
     </form>
     
 </body>

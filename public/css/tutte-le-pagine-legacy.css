@@ -23,7 +23,7 @@ body{ /* Serve per far si che il testo non sia al limite con i bordi del telefon
 
 /* QUESTO E LO STILE DEI LINK */
 a:link, a:visited{
-    color: #161616;
+    color: #000000;
     font-weight: 500;
 }
 

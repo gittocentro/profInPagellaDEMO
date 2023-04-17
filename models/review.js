@@ -18,6 +18,12 @@ const reviewSchema = new Schema({
         min: 1,
         max: 10,
     },
+    likes: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+        }
+    ],
     //DATE STUFF//
     date: {
         type: String,

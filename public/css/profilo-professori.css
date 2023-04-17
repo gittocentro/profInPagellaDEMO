@@ -11,7 +11,7 @@ html{
 }
 
 a:link, a:visited{
-    color: #161616;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -33,7 +33,7 @@ a:link, a:visited{
 }
 
 .logo{
-    width: 3.6rem;
+    width: 3.2rem;
 }
 
 
@@ -65,11 +65,11 @@ a:link, a:visited{
 .bottone-valutazione{ /* BOTTONE PER RECENSIRE IL PROF */
     text-decoration: none;
     color: #ffffff !important;
-    background-color: #161616;
+    background-color: #000000;
     font-weight: 600;
     font-size: 1.6rem;
     padding: 1.2rem 0;
-    border-radius: 10px;
+    border-radius: 100px;
     /* Serve per centrare il testo */
     display: flex;
     align-items: center;
@@ -87,8 +87,8 @@ a:link, a:visited{
     display: flex;
     flex-direction: column;
     font-size: 1.6rem;
-    padding: 1.6rem;
-    gap: 1.4rem;
+    padding: 1.6rem 1.2rem;
+    gap: 1rem;
 
 }
 
@@ -97,8 +97,8 @@ a:link, a:visited{
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    background-color: #f9f9f9;
-    border-radius: 10px;
+    background-color:rgb(248, 248, 248);
+    border-radius: 4px;
 }
 
 .dati-utente{ /* QUESTO E IL BOX CHE COMPRENDE I DATI DELL'UTENTE CHE HA PUBBLICATO LA RECENSIONE (NOME E DATA)*/
@@ -110,17 +110,57 @@ a:link, a:visited{
 
 .valutazione-numerica{ /* STILE DEL VOTO MASSIMO "/10" */
     font-size: 2.8rem;
-    font-weight: 600;
-    color: #161616;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #000000;
+    height: 60px;
+    width: 60px;
     margin: 1.2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
 }
 
 .materia-profilo {
-    color: #5341F5;
+    color: #0060df;
 }
 
 .avg-vote {
-    color: #5341F5;
-    font-size: 4.5rem;
+    background-color: #0060df;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    height: 60px;
+    width: 60px;
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+
+
+.bottone-like{
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.bottone-like img{
+    width: 2rem;
+}
+
+.bottone-like span{
+    font-size: 2.4rem;
+    color: #0060df;
+}
+
+.bottone-like button {
+    outline: none;
+    background: none;
+    border: none
 }
 

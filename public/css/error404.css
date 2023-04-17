@@ -29,7 +29,7 @@ body{
 }
 
 .immagine-404{
-    width: 50%;
+    width: 28rem;
     object-fit: cover;
 }
 
@@ -41,8 +41,9 @@ body{
 
 .link-404:link, .link-404:visited{
     font-size: 1.6rem;
-    color: #5341F5;
+    color: #0060df;
     font-weight: 500;
+    text-decoration: none;
 }
 
 .nav-2{

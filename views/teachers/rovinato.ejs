@@ -9,8 +9,8 @@
     <link rel="icon" type="image/png" href="/immagini_icone/favicon/faviconDEMO.png">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/media-queries/general-queries.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9093760943973600" crossorigin="anonymous"></script>
-    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9093760943973600"
+     crossorigin="anonymous"></script>
  
  </head>
 <body>
@@ -19,17 +19,8 @@
         <div class="contenitore-logo">
             <img class="logo" src="/immagini_icone/logo.jpg">
         </div>
-        <div class="contenitore-registrazione">
-            <% if (!user) { %>
-            <a class="tasto-accedi" href="/login">Accedi</a>
-            <a class="tasto-registrati" href="/signup">Registrati</a>
-            <% } else { %>
-            <form action="/logout" method="POST">
-                <button class="logout" type="submit">Esci dal profilo</button>
-            </form>
-            <% } %>
-        </div>
     </nav>
+
     <section class="sezione-cerca">
         <form action="/teachers" class="form-barra-di-ricerca" method="POST">
             <p class="testo-barra-di-ricerca">Cerca i tuoi professori</p>
@@ -42,14 +33,13 @@
     </section>
 
     <section class="sezione-informazioni">
-        <div class="contenitore-info" id="news">
-            <p class="titolo-info" id="news"> <img class="logo-info" src="immagini_icone/novita.png" alt="">Novita'</p>
-            <h3 class="News-h3">Da oggi puoi mettere <img width="20" src="/immagini_icone/heart.png" alt=""> alle recensioni di ogni professore!</h3>
-        </div>
         <div class="contenitore-info">
             <p class="titolo-info"> <img class="logo-info" src="immagini_icone/iniziare.png" alt="">Come funziona?</p>
             <p>Su Profinpagella puoi cercare  il <b>cognome</b> o la <b>materia</b> del tuo professore per valutarlo.</p>
             <b>Nota bene: le email della "scuola" non sono supportate.</b>
+        </div>
+        <div class="contenitore-info">
+            <p class="titolo-info"> <img class="logo-info" src="immagini_icone/novita.png" alt="">Novita'</p>
             <p>Il sito e' al momento disponibile solo per <b>IISS Majorana</b> di Martina franca.</p>
         </div>
         <div class="contenitore-info">
