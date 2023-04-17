@@ -9,7 +9,6 @@
     <!-- LINK AI FOGLI DI CSS -->
     <link rel="stylesheet" href="/css/form-recensione.css">
     <link rel="stylesheet" href="/css/media-queries/general-queries.css">
-    <link rel="icon" type="image/png" href="/immagini_icone/favicon/faviconDEMO.png">
 
     <!-- RISOLUZIONE ZOOM TESTI INPUT -->
     <style type="text/css"> 
@@ -35,19 +34,18 @@
     <!-- FORM DELLA RECENSIONE -->
     <form action="/teachers/<%= teacher._id %>/review" class="contenitore-valutazione" method="POST">
         <!-- SERVE PER SCEGLIERE IL VOTO DA DARE -->
-        <label for="voto" class="titolo-voto">Scegli un voto</label>
+        <label for="voto" class="titolo-voto">Scegli il voto <span class="obbligatorio">*</span></label>
         <input class="slider" id="voto" type="range" name="review[vote]" value="1" step="0.5" min="1" max="10" oninput="showVal(this.value)" onchange="showVal(this.value)">
 
         <!--Codice provvisorio -->
-        <p class="valutazione__voto-real-time" style="color: white">
-        1
+        <p class="valutazione__voto-real-time">
             <script>
                 document.querySelector(".valutazione__voto-real-time").innerText = document.querySelector("#voto").value
             </script>
         </p>
         <!-- Codice provvisorio -->
         <!-- SERVE PER SCEGLIERE LA RECENSIONE DA SCRIVERE -->
-        <label for="recensione" class="titolo-recensione">Scrivi una recensione</label>
+        <label for="recensione" class="titolo-recensione">Scrivi una recensione <span class="obbligatorio">*</span></label>
                     <!-- Queste sono le linee guida da rispettare -->
         <div class="linee-guida">
             <p class="titolo-linee-guida">Linee guida</p>
@@ -62,6 +60,5 @@
         <!--  BOTTONE PER PUBBLICARE LA RECENSIONE-->
         <input type="submit" Value="Invia valutazione" class="bottone-invio">
     </form>
-    
 </body>
 </html>
