@@ -15,7 +15,7 @@ const flash = require("connect-flash")
 const methodOverride = require("method-override")
 const bodyParser = require("body-parser")
 const mongoSanitize= require('express-mongo-sanitize')
-//const helmet = require("helmet")
+const helmet = require("helmet")
 const cloudinary = require("cloudinary").v2
 //CLOUDINARY CONFIGURATION
 cloudinary.config({
@@ -174,7 +174,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(session(sessionOptions))
 app.use(mongoSanitize())
-//app.use(helmet({contentSecurityPolicy: false}))
+app.use(helmet({contentSecurityPolicy: false}))
 //app.use(helmet())
 app.use("",(req,res,next) => {console.log(req.query);next()})
 
