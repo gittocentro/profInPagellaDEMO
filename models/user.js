@@ -23,9 +23,17 @@ const userSchema = new Schema({
 })
 userSchema.statics.findAndValidate =  async function(username, password) {//LOGIN
     const foundUser = await this.findOne({username})
-    const isValid = await bcrypt.compare(password, foundUser.password)
-    return isValid ? foundUser : false
+    if (foundUser) {
+        const isValid = await bcrypt.compare(password, foundUser.password)
+        return isValid ? foundUser : false
+    }
+    return false
 }
+
+userSchema.pre("save", async function(next) {
+    this.password = await bcrypt.hash(this.password, 12)
+    next()
+})
 
 const User = mongoose.model("User", userSchema)
 
