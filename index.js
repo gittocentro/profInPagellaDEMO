@@ -175,7 +175,9 @@ app.use(express.urlencoded({extended: true}))
 
 app.use(session(sessionOptions))
 app.use(mongoSanitize())
-
+app.use("", (req,res,next) => {
+    helmet({ contentSecurityPolicy: false, })
+})
 
 app.get("/", catchAsync(async(req,res) => {
     const user = await User.findById(req.session.user_id)
