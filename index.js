@@ -15,7 +15,7 @@ const flash = require("connect-flash")
 const methodOverride = require("method-override")
 const bodyParser = require("body-parser")
 const mongoSanitize= require('express-mongo-sanitize')
-//const helmet = require("helmet")
+const helmet = require("helmet")
 const cloudinary = require("cloudinary").v2
 //CLOUDINARY CONFIGURATION
 cloudinary.config({
