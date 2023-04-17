@@ -158,8 +158,6 @@ const isNotLoggedIn = (req,res,next) => {
     next()
 }
 
-<<<<<<< HEAD
-=======
 const isVerifying = (req,res,next) => {
     if (!req.session.tk_id) {
         throw new AppError("Non hai accesso a questa pagina", 401)
