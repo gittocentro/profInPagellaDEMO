@@ -272,7 +272,7 @@ app.post("/teachers/:id/:r_id/like", requireLogin,catchAsync(async (req,res,next
     console.log(review.likes[0])
     console.log(req.session.user_id)
     for var (i = 0; i < review.likes.length; i++) {
-        if (user._id == review.likes[0]) {
+        if (user._id == review.likes[i]) {
             await Review.findByIdAndUpdate(review._id, {$pull: {likes: {$in: [user._id] } } } )
             return res.redirect("/")
         }
