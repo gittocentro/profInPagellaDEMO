@@ -148,7 +148,8 @@ const requireLogin = (req,res,next) => {
         return res.redirect("/login")
     } 
     next()
-}
+
+]
 
 const isNotLoggedIn = (req,res,next) => {
     if (req.session.user_id) {
