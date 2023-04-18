@@ -65,10 +65,6 @@ nav{
     border-radius: 100px;
 }
 
-
-
-
-
 @import url("https://theme.zdassets.com/theme_assets/1076102/6aa88d06680d247ef5fb171705a72bd3eef9c760.svg");
 
 /*BARRA DI RICERCA*/
@@ -78,7 +74,6 @@ nav{
     background-size: cover;
     background-position: center;
     padding: 6.8rem 0;
-    
 }
 
 .form-barra-di-ricerca{
@@ -188,6 +183,25 @@ input[type=search]::-webkit-search-results-decoration {
       
 }
 
+.contenitore-info.GuideLines {
+    position: relative;
+    border-radius: 15px; 
+}
+
+.contenitore-info.GuideLines::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 15px; 
+        padding: 3px; 
+background: linear-gradient(90deg, rgba(114,215,143,1) 21%, rgba(94,217,80,1) 61%);
+        -webkit-mask: 
+           linear-gradient(#fff 0 0) content-box, 
+           linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude; 
+      
+}
 
 .logo-info{
     width: 2rem;
