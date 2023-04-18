@@ -183,12 +183,11 @@ input[type=search]::-webkit-search-results-decoration {
       
 }
 
-.contenitore-info.GuideLines {
+.GuideLines {
     position: relative;
     border-radius: 15px; 
 }
-
-.contenitore-info.GuideLines::before {
+.GuideLines::before {
         content: "";
         position: absolute;
         inset: 0;
