@@ -1,8 +1,0 @@
-@media screen and (max-width: 680px) { /* SERVE PER FAR SI CHE LA BARRA DI RICERCA SI ADATTI ALLA DIMENSIONE DEI TABLET E DEGLI SMARTPHONE */
-    .input-di-ricerca{
-        width: 100%;
-    }
-    .illustrazione{ /* Serve per eliminare l'illustrazione dai tablet e gli smartphone */
-        display: none;
-    }
-}
